@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class testOPmode extends LinearOpMode{
     private Gyroscope imu;
     private DcMotor motorTest;
-    private DigitalChannel digitalTouch;
-    private DistanceSensor sensorColorRange;
+    //private DigitalChannel digitalTouch;
+    //private DistanceSensor sensorColorRange;
     private Servo servoTest;
 
 
@@ -20,14 +20,17 @@ public class testOPmode extends LinearOpMode{
     public void runOpMode() {
         imu = hardwareMap.get(Gyroscope.class, "imu");
         motorTest = hardwareMap.get(DcMotor.class, "motorTest");
-        digitalTouch = hardwareMap.get(DigitalChannel.class, "digitalTouch");
-        sensorColorRange = hardwareMap.get(DistanceSensor.class, "sensorColorRange");
+        //digitalTouch = hardwareMap.get(DigitalChannel.class, "digitalTouch");
+        //sensorColorRange = hardwareMap.get(DistanceSensor.class, "sensorColorRange");
         servoTest = hardwareMap.get(Servo.class, "servoTest");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+
+        double tgtPower=0;
+
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
